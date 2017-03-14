@@ -24,12 +24,21 @@ Vue.use(MuseUI)
 
 // 引入组件:单页面所需的路由管理
 import Index from './components/index.vue';
+import News from './components/channels/news.vue';
+import Players from './components/channels/players.vue';
 
 // 配置vue-router
 var router = new VueRouter({
 	routes:[{
 		path:'/index',
-		component:Index
+		component:Index,
+		children:[{
+			path:'news',
+			component:News
+		},{
+			path:'players',
+			component:Players
+		}]
 	}]
 })
 
