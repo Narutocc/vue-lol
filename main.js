@@ -25,7 +25,9 @@ Vue.use(MuseUI)
 // 引入组件:单页面所需的路由管理
 import Index from './components/index.vue';
 import News from './components/channels/news.vue';
+import Heroes from './components/channels/heroes.vue';
 import Players from './components/channels/players.vue';
+import Detail from './components/detail.vue';
 
 // 配置vue-router
 var router = new VueRouter({
@@ -36,9 +38,19 @@ var router = new VueRouter({
 			path:'news',
 			component:News
 		},{
+			path:'heroes',
+			component:Heroes
+		},{
 			path:'players',
 			component:Players
 		}]
+	},{
+		path:'/detail/:id',
+		component:Detail
+	},{
+		// 重定向
+		path:'/',
+		redirect:'/index/news'
 	}]
 })
 
