@@ -1,9 +1,9 @@
 <template>
 <div>
-  <mu-raised-button label="上面弹出" @click="open('top')"/>
+  <!--<mu-raised-button label="上面弹出" @click="open('top')"/>
   <mu-raised-button label="下面弹出" @click="open('bottom')"/>
   <mu-raised-button label="左边弹出" @click="open('left')"/>
-  <mu-raised-button label="右边弹出" @click="open('right')"/>
+  <mu-raised-button label="右边弹出" @click="open('right')"/>-->
   <mu-popup position="bottom" popupClass="demo-popup-bottom" :open="bottomPopup" @close="close('bottom')">
     <mu-appbar title="弹出">
       <mu-flat-button slot="right" label="关闭" color="white" @click="close('bottom')"/>
@@ -35,8 +35,13 @@ export default {
     return {
       bottomPopup: false,
       topPopup: false,
-      leftPopup: false,
+      //leftPopup: false,
       rightPopup: false
+    }
+  },
+  computed:{
+    leftPopup:function(){
+      return this.$store.state.isLeftPopUp
     }
   },
   methods: {
@@ -44,7 +49,11 @@ export default {
       this[position + 'Popup'] = true
     },
     close (position) {
-      this[position + 'Popup'] = false
+      if(position == 'left'){
+        this.$store.commit('set_isLeftPopUp',false)
+      }else{
+        this[position + 'Popup'] = false
+      }
     }
   },
   watch: {

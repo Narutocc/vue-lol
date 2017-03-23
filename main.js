@@ -22,6 +22,19 @@ import MuseUI from 'muse-ui';
 import 'muse-ui/dist/muse-ui.css';
 Vue.use(MuseUI)
 
+// 使用vuex传递数据,集中式状态管理中心
+var store = new Vuex.Store({
+	state:{
+		isLeftPopUp:false,
+
+	},
+	mutations:{
+		set_isLeftPopUp:function(state,data){
+			state.isLeftPopUp = data
+		}
+	}
+})
+
 // 引入组件:单页面所需的路由管理
 import Index from './components/index.vue';
 import News from './components/channels/news.vue';
@@ -35,13 +48,13 @@ var router = new VueRouter({
 		path:'/index',
 		component:Index,
 		children:[{
-			path:'news',
+			path:'news/:id',
 			component:News
 		},{
-			path:'heroes',
+			path:'heroes/:id',
 			component:Heroes
 		},{
-			path:'players',
+			path:'players/:id',
 			component:Players
 		}]
 	},{
@@ -50,11 +63,12 @@ var router = new VueRouter({
 	},{
 		// 重定向
 		path:'/',
-		redirect:'/index/news'
+		redirect:'/index/news/1'
 	}]
 })
 
 // 注入构造器
 new Vue({
-	router:router
+	router:router,
+	store:store
 }).$mount('#lol')
