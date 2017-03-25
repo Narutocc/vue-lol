@@ -2,7 +2,7 @@
       <swiper :options="swiperOption" style="margin-top:56px">
         <swiper-slide v-for="swiper in swipers">
             <a :href="swiper.article_url">
-                <img :src="swiper.image_url_big" height="20%" width="100%"/>
+                <img :src="swiper.image_url_big" height="187.5px" width="100%"/>
             </a>
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>

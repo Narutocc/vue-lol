@@ -22,11 +22,16 @@ import MuseUI from 'muse-ui';
 import 'muse-ui/dist/muse-ui.css';
 Vue.use(MuseUI)
 
+// 图片懒加载
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload,{
+	loading:'./static/product_default.png'
+})
+
 // 使用vuex传递数据,集中式状态管理中心
 var store = new Vuex.Store({
 	state:{
 		isLeftPopUp:false,
-
 	},
 	mutations:{
 		set_isLeftPopUp:function(state,data){

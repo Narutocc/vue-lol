@@ -17,6 +17,7 @@
     "style-loader": "^0.13.2",
     "vue": "^2.2.2",
     "vue-awesome-swiper": "^2.3.2",
+    "vue-lazyload": "^1.0.1",
     "vue-loader": "^11.1.4",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.3.0",

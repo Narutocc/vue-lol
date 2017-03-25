@@ -1,9 +1,13 @@
 <template>
 <div class="gridlist-demo-container">
+  <div class="header">
+    <span class="arrow" @click="back()"><</span>
+    <span>所有英雄</span>
+  </div>
   <mu-grid-list class="gridlist-demo" style="margin-top:56px;margin-bottom:56px;">
     <mu-grid-tile v-for="tile in list">
       <a :href="'#/detail/'+tile.id" class="mu-grid-tile">
-       <img :src="'http://cdn.tgp.qq.com/pallas/images/champions_id/'+tile.id+'.png'"/>
+       <img v-lazy="'http://cdn.tgp.qq.com/pallas/images/champions_id/'+tile.id+'.png'"/>
       </a>
       <span slot="title">{{tile.title}}</span>
       <span slot="subTitle"><b>{{tile.ename}}</b></span>
@@ -30,6 +34,9 @@ export default {
             console.log(data);
             this.list = data.data.data;
         })
+    },
+    back:function(){
+      window.history.go(-1);
     }
   },
   mounted:function(){
@@ -37,7 +44,6 @@ export default {
   }
 }
 </script>
-
 <style>
 .gridlist-demo-container{
   display: flex;
