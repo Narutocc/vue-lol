@@ -1,23 +1,6 @@
-### vue项目
-<!-- 可以使用table标签构造表格 -->
-<table>
-	<tr>
-		<td>1</td>
-		<td>2</td>
-		<td>3</td>
-	</tr>
-	<tr>
-		<td>aa</td>
-		<td>aa</td>
-		<td>aa</td>
-	</tr>
-</table>
+### Vue2.0版英雄联盟助手
+1. 技术栈
+由 vue-cli + muse-ui 构建，使用 vuex 进行状态管理，图片懒加载: vue-lazyload，轮播组件：vue-awesome-swiper。
+2. 效果图
 
-<!-- 链接格式（文本） -->
-[百度](https://www.baidu.com/)
-文字链接 [百度](https://www.baidu.com/)  
-<!--链接格式（网址）  -->
-网址链接 <http://链接网址>
-图片格式（比a链接前面多一个!）
-![牡丹](http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg)
-<!-- 换行：在当前行的结尾加2个空格；起一个新段落，空出一行 -->
+3. 更多英雄联盟API可点击[带玩游戏平台](http://www.games-cube.com/)
